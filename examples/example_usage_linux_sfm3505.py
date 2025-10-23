@@ -7,7 +7,7 @@
 #
 # Generator:     sensirion-driver-generator 1.3.4
 # Product:       sfm3505
-# Model-Version: 1.1.0
+# Model-Version: 1.2.0
 #
 
 import argparse
