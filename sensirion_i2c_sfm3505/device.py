@@ -21,8 +21,7 @@ from sensirion_i2c_sfm3505.commands import (ConfigureAveraging, ReadAirMeasureme
                                             ReadProductIdentifier, StartContinuousMeasurement,
                                             StartContinuousMeasurementWithFilter, StopContinuousMeasurement)
 
-from sensirion_i2c_sfm3505.result_types import (
-    SignalAirFlow, SignalAirFlowRaw, SignalO2Flow, SignalO2FlowRaw)
+from sensirion_i2c_sfm3505.result_types import (SignalAirFlow, SignalAirFlowRaw, SignalO2Flow, SignalO2FlowRaw)
 
 
 class Sfm3505DeviceBase:
@@ -145,8 +144,7 @@ class Sfm3505Device(Sfm3505DeviceBase):
             The result needs to be scaled to obtain slm.
         """
         flow_bytes_raw = self.read_all_measurement_data_raw()
-        return (SignalAirFlowRaw(flow_bytes_raw),
-                SignalO2FlowRaw(flow_bytes_raw))
+        return (SignalAirFlowRaw(flow_bytes_raw), SignalO2FlowRaw(flow_bytes_raw))
 
     def read_air_measurement_data(self):
         """

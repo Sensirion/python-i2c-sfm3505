@@ -88,3 +88,4 @@ def test_start_continuous_measurement_with_filter1(sensor):
     print(f"a_air_flow_raw: {a_air_flow_raw}; "
           )
     sensor.stop_continuous_measurement()
+
