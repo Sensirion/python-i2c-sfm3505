@@ -24,9 +24,7 @@ class SignalAirFlow(AbstractSignal):
     """
 
     def __init__(self, flow_bytes_raw):
-        flow_raw = (
-            flow_bytes_raw[0] << 16) | (
-            flow_bytes_raw[1] << 8) | flow_bytes_raw[2]
+        flow_raw = (int(flow_bytes_raw[0]) << 16) | (int(flow_bytes_raw[1]) << 8) | int(flow_bytes_raw[2])
         self._air_flow = (float(flow_raw) - 8388608) / 25600
 
     @property
@@ -44,9 +42,7 @@ class SignalO2Flow(AbstractSignal):
     """
 
     def __init__(self, flow_bytes_raw):
-        flow_raw = (
-            flow_bytes_raw[3] << 16) | (
-            flow_bytes_raw[4] << 8) | flow_bytes_raw[5]
+        flow_raw = (int(flow_bytes_raw[3]) << 16) | (int(flow_bytes_raw[4]) << 8) | int(flow_bytes_raw[5])
         self._o2_flow = (float(flow_raw) - 8388608) / 25600
 
     @property
@@ -64,9 +60,7 @@ class SignalO2FlowRaw(AbstractSignal):
     """
 
     def __init__(self, flow_bytes_raw):
-        self._o2_flow_raw = int(
-            (flow_bytes_raw[3] << 16) | (
-                flow_bytes_raw[4] << 8) | flow_bytes_raw[5])
+        self._o2_flow_raw = (int(flow_bytes_raw[3]) << 16) | (int(flow_bytes_raw[4]) << 8) | int(flow_bytes_raw[5])
 
     @property
     def value(self):
@@ -83,9 +77,7 @@ class SignalAirFlowRaw(AbstractSignal):
     """
 
     def __init__(self, flow_bytes_raw):
-        self._air_flow_raw = int(
-            (flow_bytes_raw[0] << 16) | (
-                flow_bytes_raw[1] << 8) | flow_bytes_raw[2])
+        self._air_flow_raw = (int(flow_bytes_raw[0]) << 16) | (int(flow_bytes_raw[1]) << 8) | int(flow_bytes_raw[2])
 
     @property
     def value(self):
@@ -93,3 +85,4 @@ class SignalAirFlowRaw(AbstractSignal):
 
     def __str__(self):
         return '{0}'.format(self.value)
+

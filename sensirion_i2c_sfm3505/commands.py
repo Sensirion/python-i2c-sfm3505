@@ -37,12 +37,7 @@ class StartContinuousMeasurement(Transfer):
     def pack(self):
         return self.tx_data.pack([])
 
-    tx = TxData(
-        CMD_ID,
-        '>H',
-        device_busy_delay=0.004,
-        slave_address=None,
-        ignore_ack=False)
+    tx = TxData(CMD_ID, '>H', device_busy_delay=0.004, slave_address=None, ignore_ack=False)
 
 
 class StartContinuousMeasurementWithFilter(Transfer):
@@ -56,12 +51,7 @@ class StartContinuousMeasurementWithFilter(Transfer):
     def pack(self):
         return self.tx_data.pack([self._a_filter])
 
-    tx = TxData(
-        CMD_ID,
-        '>HH',
-        device_busy_delay=0.004,
-        slave_address=None,
-        ignore_ack=False)
+    tx = TxData(CMD_ID, '>HH', device_busy_delay=0.004, slave_address=None, ignore_ack=False)
 
 
 class ReadAllMeasurementDataRaw(Transfer):

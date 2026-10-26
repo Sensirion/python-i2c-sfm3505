@@ -7,7 +7,7 @@ name = "sensirion_i2c_sfm3505"
 description = "I2C driver for the Sensirion SFM3505 sensor family"
 
 readme = "README.md"
-version =  "1.0.0"
+version =  "1.2.0"
 
 requires-python = ">=3.8.4,<4.0"
 
